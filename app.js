@@ -1,9 +1,14 @@
 const express = require('express');
 const app = express();
 const cookieParser = require("cookie-parser");
+const cors = require("cors");
 
 app.use(express.static("public"));
 app.use(cookieParser());
+app.use(cors({
+    origin: '*'
+}));
+
 
 app.get("/getCookieInfo", function(req, res) {
     console.log('Sripaul get cookie info here', JSON.stringify(req.cookies));

@@ -5,6 +5,11 @@ const cookieParser = require("cookie-parser");
 app.use(express.static("public"));
 app.use(cookieParser());
 
+app.get("/getCookieInfo", function(req, res) {
+    console.log('Sripaul get cookie info here', JSON.stringify(req.cookies));
+    return res.send("success");
+});
+
 app.get("/", function(req, res) {
     console.log('Sripaul was here', JSON.stringify(req.cookies));
     var randomNumber=Math.random().toString();
@@ -13,10 +18,7 @@ app.get("/", function(req, res) {
     return res.send("<h1>Hello From MKT - 1</h1>")
 });
 
-app.get("/getCookieInfo", function(req, res) {
-    console.log('Sripaul get cookie info here', JSON.stringify(req.cookies));
-    return res.send("success");
-});
+
 
 app.listen(process.env.PORT || 3000, () => console.log(
     "Server is running..."

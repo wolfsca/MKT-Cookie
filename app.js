@@ -14,7 +14,7 @@ app.get("/", function(req, res) {
     console.log('Sripaul was here', JSON.stringify(req.cookies));
     var randomNumber=Math.random().toString();
     randomNumber=randomNumber.substring(2,randomNumber.length);
-    res.cookie('cookieName',randomNumber, {
+    res.cookie('mkt_zettle_cookie',randomNumber, {
         maxAge: 900000,
         httpOnly: true,
         sameSite: false

@@ -14,7 +14,11 @@ app.get("/", function(req, res) {
     console.log('Sripaul was here', JSON.stringify(req.cookies));
     var randomNumber=Math.random().toString();
     randomNumber=randomNumber.substring(2,randomNumber.length);
-    res.cookie('cookieName',randomNumber, { maxAge: 900000, httpOnly: true });
+    res.cookie('cookieName',randomNumber, {
+        maxAge: 900000,
+        httpOnly: true,
+        sameSite: false
+    });
     return res.send("<h1>Hello From MKT - 1</h1>")
 });
 

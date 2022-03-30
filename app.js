@@ -6,7 +6,7 @@ const cors = require("cors");
 app.use(express.static("public"));
 app.use(cookieParser());
 app.use(cors({
-    origin: '*'
+    origin: 'mkt-cookie-app.herokuapp.com'
 }));
 
 
@@ -22,9 +22,7 @@ app.get("/", function(req, res) {
     res.cookie('mkt_zettle_cookie',randomNumber, {
         maxAge: 900000,
         httpOnly: true,
-        sameSite: 'none',
-        secure: true,
-        domain: '.herokuapp.com'
+        secure: true
     });
     return res.send("<h1>Hello From MKT - 1</h1>")
 });

@@ -23,7 +23,8 @@ app.get("/", function(req, res) {
         maxAge: 900000,
         httpOnly: true,
         sameSite: 'none',
-        secure: true
+        secure: true,
+        domain: '.herokuapp.com'
     });
     return res.send("<h1>Hello From MKT - 1</h1>")
 });

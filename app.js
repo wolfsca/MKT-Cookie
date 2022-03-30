@@ -11,7 +11,7 @@ app.use(cors({
 
 
 app.get("/getCookieInfo", function(req, res) {
-    console.log('Sripaul get cookie info here', JSON.stringify(req.cookies));
+    console.log('====== >>> COOKIES RECEIVED ##', req.query.from , JSON.stringify(req.cookies));
     return res.send("success");
 });
 

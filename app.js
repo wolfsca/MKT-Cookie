@@ -25,6 +25,11 @@ app.get("/", function(req, res) {
         secure: true,
         sameSite: 'none'
     });
+
+    res.cookie('mkt_zettle_cookie_ins', randomNumber, {
+        sameSite: 'none',
+        maxAge: 900000
+    })
     return res.send("<h1>Hello From MKT - 1</h1>")
 });
 

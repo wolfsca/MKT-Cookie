@@ -5,9 +5,9 @@ const cors = require("cors");
 
 app.use(express.static("public"));
 app.use(cookieParser());
-app.use(cors({
+/*app.use(cors({
     origin: '*'
-}));
+}));*/
 
 
 app.get("/getCookieInfo", function(req, res) {

@@ -6,7 +6,7 @@ const cors = require("cors");
 app.use(express.static("public"));
 app.use(cookieParser());
 app.use(cors({
-    origin: 'mkt-cookie-app.herokuapp.com'
+    origin: '*'
 }));
 
 
